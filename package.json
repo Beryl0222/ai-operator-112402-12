@@ -1,13 +1,32 @@
 {
   "name": "se3-camera-adjoint",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
-  "engines": {
-    "node": "22.x"
+  "main": "./index.mjs",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.cjs",
+      "default": "./index.mjs"
+    },
+    "./*": "./*.mjs",
+    "./pose": "./pose.mjs",
+    "./pose.mjs": "./pose.mjs",
+    "./se3": "./se3.mjs",
+    "./compose": "./compose.mjs",
+    "./calibration": "./calibration.mjs",
+    "./marginalize": "./marginalize.mjs",
+    "./window": "./window.mjs",
+    "./session": "./session.mjs",
+    "./solve": "./solve.mjs"
   },
   "scripts": {
     "inspect": "node inspect.mjs",
+    "solve": "node solve.mjs",
     "test": "node --test"
+  },
+  "engines": {
+    "node": "22.x"
   }
 }
